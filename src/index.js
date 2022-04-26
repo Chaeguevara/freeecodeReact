@@ -1,37 +1,49 @@
 import React from "react";
 import ReactDOM from "react-dom";
+
+//CSS
 import "./index.css";
-//traditional JS syntax
+//setup vars
+
+const firstBook = {
+  author: "James Clear",
+  title: "Atomic Habits",
+  img: "https://m.media-amazon.com/images/I/513Y5o-DYtL.jpg",
+};
+const secondBook = {
+  author: "Brené Brown",
+  title:
+    "Atlas of the Heart: Mapping Meaningful Connection and the Language of Human Experience",
+  img: "https://images-na.ssl-images-amazon.com/images/I/81MgglteUFL._AC_UL381_SR381,381_.jpg",
+};
 function BookList() {
   return (
     <section className="booklist">
-      <Book />
-      <Book />
-      <Book />
-      <Book />
-      <Book />
-      <Book />
-      <Book />
+      <Book
+        author={firstBook.author}
+        title={firstBook.title}
+        img={firstBook.img}
+      />
+      <Book
+        author={secondBook.author}
+        title={secondBook.title}
+        img={secondBook.img}
+      />
     </section>
   );
 }
 
-const Book = () => {
+const Book = (props) => {
+  console.log(props);
   return (
     <article className="book">
-      <Image />
-      <Title />
-      <Author />
+      <img src={props.img} alt="" />
+      <h1>{props.title}</h1>
+      <h4>{props.author}</h4>
     </article>
   );
 };
 
-const Image = () => (
-  <img src="https://m.media-amazon.com/images/I/513Y5o-DYtL.jpg" alt="" />
-);
-
-const Title = () => <h1>Atomic Habits</h1>;
-const Author = () => <h1>James Clear</h1>;
 //const Greeting = () => {
 //return React.createElement("h1", {}, "hello world");
 //};
