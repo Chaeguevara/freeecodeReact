@@ -23,7 +23,9 @@ function BookList() {
         author={firstBook.author}
         title={firstBook.title}
         img={firstBook.img}
-      />
+      >
+        <p>Lorem</p>
+      </Book>
       <Book
         author={secondBook.author}
         title={secondBook.title}
@@ -40,10 +42,21 @@ const Book = (props) => {
       <img src={props.img} alt="" />
       <h1>{props.title}</h1>
       <h4>{props.author}</h4>
+      {props.children}
     </article>
   );
 };
 
+//other syntax.
+const Book1 = ({ img, title, author }) => {
+  return (
+    <article className="book">
+      <img src={img} alt="" />
+      <h1>{title}</h1>
+      <h4>{author}</h4>
+    </article>
+  );
+};
 //const Greeting = () => {
 //return React.createElement("h1", {}, "hello world");
 //};
