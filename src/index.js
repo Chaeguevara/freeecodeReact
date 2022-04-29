@@ -6,11 +6,13 @@ import "./index.css";
 //setup vars
 const books = [
   {
+    id: 1,
     author: "James Clear",
     title: "Atomic Habits",
     img: "https://m.media-amazon.com/images/I/513Y5o-DYtL.jpg",
   },
   {
+    id: 2,
     author: "Brené Brown",
     title:
       "Atlas of the Heart: Mapping Meaningful Connection and the Language of Human Experience",
@@ -21,7 +23,7 @@ function BookList() {
   return (
     <section className="booklist">
       {books.map((book) => {
-        return <Book img={book.img} title={book.title} author={book.author} />;
+        return <Book key={book.id} {...book} />;
       })}
     </section>
   );
