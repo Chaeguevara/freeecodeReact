@@ -1,24 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
-
+import Book from "./Book";
 //CSS
 import "./index.css";
-//setup vars
-const books = [
-  {
-    id: 1,
-    author: "James Clear",
-    title: "Atomic Habits",
-    img: "https://m.media-amazon.com/images/I/513Y5o-DYtL.jpg",
-  },
-  {
-    id: 2,
-    author: "Brené Brown",
-    title:
-      "Atlas of the Heart: Mapping Meaningful Connection and the Language of Human Experience",
-    img: "https://images-na.ssl-images-amazon.com/images/I/81MgglteUFL._AC_UL381_SR381,381_.jpg",
-  },
-];
+
+import { books } from "./books";
+
 function BookList() {
   return (
     <section className="booklist">
@@ -28,30 +15,6 @@ function BookList() {
     </section>
   );
 }
-
-const Book = (props) => {
-  console.log(props);
-
-  const clickHandler = () => {
-    alert("hello world");
-  };
-  return (
-    <article
-      className="book"
-      onMouseOver={() => {
-        console.log(props.author);
-      }}
-    >
-      <img src={props.img} alt="" />
-      <h1 onClick={() => console.log(props.title)}>{props.title}</h1>
-      <h4>{props.author}</h4>
-      {props.children}
-      <button type="button" onClick={clickHandler}>
-        reference example
-      </button>
-    </article>
-  );
-};
 
 //other syntax.
 const Book1 = ({ img, title, author }) => {
