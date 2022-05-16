@@ -12,6 +12,7 @@ const UseEffectFetchData = () => {
     setUsers(users);
     console.log(users);
   };
+
   useEffect(() => {
     getUsers();
   }, []);
